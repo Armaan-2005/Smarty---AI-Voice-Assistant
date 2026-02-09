@@ -1,0 +1,23 @@
+Note : ollama with [ gpt-oss:20b ] model should be installed already
+
+cmd/bash:
+
+ollama list
+
+ollama serve
+
+ollama pull gemma3:1b
+
+curl http://localhost:11434/api/generate -d "{\"model\": \"gemma3:1b\", \"prompt\": \"Hello\", \"stream\": false}"
+
+curl http://localhost:11434/api/chat -d "{\"model\": \"gemma3:1b\", \"messages\": [{\"role\": \"user\", \"content\": \"Hello\"}], \"stream\": false}"
+
+Python 3.9 , 3.10 or 3.11 (Python 3.10 works better)
+
+Default installed:
+
+import os
+import time
+import webbrowser
+import threading
+from datetime import datetime
